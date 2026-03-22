@@ -10,7 +10,11 @@ const uploadPic = async (req, res) => {
     if (name) userData.name = name;
     if (bio) userData.bio = bio;
     if (email) userData.email = email;
-    if (profilePic) userData.profilePic = req.file.filename;
+
+    if (profilePic) {
+      userData.profilePic = req.file.path; // URL
+    }
+    // if (profilePic) userData.profilePic = req.file.filename;
 
     await userData.save();
     return res.json({
