@@ -9,7 +9,7 @@ const AuthToken = async (req,res,next)=>{
         next();
     }catch(err){
         console.log("Token is not valid - ",err);
-        res.status(404).json({message:"Token is not valid - expired "})   
+        res.status(404).json({message:"Token is not valid - expired "})     
     }
 }
 
