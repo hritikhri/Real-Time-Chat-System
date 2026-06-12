@@ -316,22 +316,29 @@ npm run dev
 
 ## Login
 
-<img src="./screenshots/login.png" width="700"/>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/73e995a2-6cd4-4532-87d8-5267c0b14801" />
 
 
 ## Signup
 
-<img src="./screenshots/signup.png" width="700"/>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3aef22da-0443-48d5-b413-af5e69140b06" />
 
 
 ## Chat Interface
 
-<img src="./screenshots/chat.png" width="700"/>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/81464962-13a9-421c-a085-c326fccfa417" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6fd68671-93c3-47cf-83b4-8cceb6f66654" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/790f6285-1313-4032-98c3-7918e5dd2be3" />
+
+## Searching
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f13ae289-057e-495f-9503-5a96f418e2a7" />
 
 
 ## Profile Management
 
-<img src="./screenshots/profile.png" width="700"/>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c84a9ead-e7bc-4c09-b6cb-e109d3e8d0d0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bdb273c7-0c2b-46e7-88e6-da2f0d1f59d3" />
 
 
 ---
