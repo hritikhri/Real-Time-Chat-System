@@ -2,24 +2,38 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const http = require("http");
-const { Server } = require("socket.io");
 const cors = require("cors");
 const path = require("path");
-const ChatingSocket = require('./sockets/ChatingSocket')
+const ChatingSocket = require('./sockets/ChatingSocket');
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://realtime-chating-system-h.vercel.app", 
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // allow requests with no origin (e.g. curl, mobile apps)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS blocked: ${origin}`));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
 // Middlewares
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-app.use(
-  cors({
-    origin: ["http://localhost:5173","https://realtime-chating-system-h.vercel.app/"],
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
-// Chatting server
+// Chatting server — pass corsOptions so Socket.IO uses the same config
 const server = http.createServer(app);
-ChatingSocket(server);
+ChatingSocket(server, corsOptions);
 
 const connectDB = require("./db/Database");
 const UserAuth = require("./routes/AuthRoutes");
@@ -28,13 +42,11 @@ const ProfileRoutes = require("./routes/ProfileRoutes");
 const MessageRoutes = require("./routes/MessageRoutes");
 const UpdateRoutes = require("./routes/UpdateRoutes");
 
+app.use("/auth", UserAuth);
+app.use("/", AuthToken, ProfileRoutes);
+app.use("/", AuthToken, MessageRoutes);
+app.use("/update", AuthToken, UpdateRoutes);
 
-app.use("/auth",UserAuth);
-app.use("/",AuthToken, ProfileRoutes);
-app.use("/",AuthToken, MessageRoutes);
-app.use("/update",AuthToken,UpdateRoutes)
-
-// listing the website
 server.listen(process.env.Port, () => {
   connectDB();
   console.log(`Server is listening on port ${process.env.Port}`);
