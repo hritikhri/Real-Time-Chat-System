@@ -29,7 +29,6 @@ const corsOptions = {
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 
 // Chatting server — pass corsOptions so Socket.IO uses the same config
 const server = http.createServer(app);
