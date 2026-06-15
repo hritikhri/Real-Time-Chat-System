@@ -12,7 +12,7 @@ app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173","https://realtime-chating-system-h.vercel.app/"],
     credentials: true,
   })
 );
