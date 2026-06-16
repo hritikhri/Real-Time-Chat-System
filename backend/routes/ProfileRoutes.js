@@ -6,7 +6,7 @@ const { loginauthentication } = require('../controllers/LoginAuthentication');
 
 Router.get("/profile",GetProfile);
 Router.get("/friendlist",FriendList);
-Router.get("/loginauthentication",loginauthentication);
+// Router.get("/loginauthentication",loginauthentication);
 Router.get("/search",searchUser)
 
 module.exports = Router;

@@ -8,7 +8,7 @@ const ChatingSocket = require('./sockets/ChatingSocket');
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://realtime-chating-system-h.vercel.app", 
+  process.env.FRONTEND_URL, 
 ];
 
 const corsOptions = {
