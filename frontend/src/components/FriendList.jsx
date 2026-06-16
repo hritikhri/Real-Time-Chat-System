@@ -20,7 +20,7 @@ const FriendList = ({ userList,resetSearch, onSelectUser, defaultDp, UserPopup ,
               <img
                 src={
                   user.profilePic
-                    ? `http://localhost:3000/uploads/${user.profilePic}`
+                    ? `${import.meta.env.VITE_BACKEND}/uploads/${user.profilePic}`
                     : defaultDp
                 }
                 style={{ height: "35px", width: "35px" }}

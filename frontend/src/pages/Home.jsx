@@ -10,7 +10,7 @@ import Messages from "../components/Messages";
 const Home = () => {
   const navigate = useNavigate();
   const [defaultPic, setdefaultPic] = useState(
-    "http://localhost:3000/uploads/1122.png"
+    `${import.meta.env.VITE_BACKEND}/uploads/1122.png`
   );
   const [profile, setProfile] = useState({
     name: "",
@@ -26,7 +26,7 @@ const Home = () => {
   const [searchedUser, setSearchedUser] = useState(null);
   const [search, setSearch] = useState("");
   const [mainDP, setMainDp] = useState({
-    default: "http://localhost:3000/uploads/1122.png",
+    default: `${import.meta.env.VITE_BACKEND}/uploads/1122.png`,
     edited: ` `,
   });
 
@@ -76,7 +76,7 @@ const Home = () => {
           userList: friendListRes.data.UserList || [],
         });
         setMainDp({
-          edited: `http://localhost:3000/uploads/${profileRes.data.profilePic}`,
+          edited: `${import.meta.env.VITE_BACKEND}/uploads/${profileRes.data.profilePic}`,
         });
       } catch (err) {
         console.log(err);

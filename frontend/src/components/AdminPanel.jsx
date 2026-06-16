@@ -14,7 +14,7 @@ const AdminPanel = ({ currentUser, panelStatus, afterUpdate, defaultDp }) => {
           <img
             src={
               currentUser.profilePic
-                ? `http://localhost:3000/uploads/${currentUser.profilePic}`
+                ? `${import.meta.env.VITE_BACKEND}/uploads/${currentUser.profilePic}`
                 : defaultDp
             }
             alt="Profile"

@@ -18,7 +18,7 @@ const FriendInfo = ({ user, useAdminpanel ,defaultDp ,UserPopup,SavedPopData}) =
             <img
               src={
                 user.profilePic
-                  ? `http://localhost:3000/uploads/${user.profilePic}`
+                  ? `${import.meta.env.VITE_BACKEND}/uploads/${user.profilePic}`
                   : defaultDp
               }
               style={{ height: "40px", width: "40px" }}

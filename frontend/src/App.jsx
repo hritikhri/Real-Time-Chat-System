@@ -8,7 +8,7 @@ import MainView from "./pages/MainView";
 import SignupOTP from "./components/SignupOTP";
 
 function App() {
-  return (
+  return ( 
     <>
       <div className="AppContainer">
         <Router>

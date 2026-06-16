@@ -11,7 +11,7 @@ const UserInfoPop = ({ selectdUser, UserPopupClose, defaultDp }) => {
             <img
               src={
                 selectdUser.profilePic
-                  ? `http://localhost:3000/uploads/${selectdUser.profilePic}`
+                  ? `${import.meta.env.VITE_BACKEND}/uploads/${selectdUser.profilePic}`
                   : defaultDp
               }
               alt=""

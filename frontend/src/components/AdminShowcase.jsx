@@ -13,7 +13,7 @@ const AdminShowcase = ({ adminData, editMode, defaultDp ,afterEditing}) => {
               <img
                 src={
                   adminData.profilePic
-                    ? `http://localhost:3000/uploads/${adminData.profilePic}`
+                    ? `${import.meta.env.VITE_BACKEND}/${adminData.profilePic}`
                     : defaultDp
                 }
                 style={{ height: "100%", width: "100%" }}

@@ -75,7 +75,7 @@ const EdittingPage = ({
                   <img
                     src={
                       adminData.profilePic
-                        ? `http://localhost:3000/uploads/${adminData.profilePic}`
+                        ? `${import.meta.env.VITE_BACKEND}/uploads/${adminData.profilePic}`
                         : defaultDp
                     }
                     alt="Profile"
